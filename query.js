@@ -124,7 +124,11 @@ switch (arg) {
     // length of paths for each trace for a specific host
     break;
   case '':
-    console.log('Usage: query.js [-alh] [target]');
+    console.log('Usage: query.js [-what] [target]');
+    console.log(' -w  weight of each IP');
+    console.log(' -h  etc/hosts style');
+    console.log(' -a  addresses');
+    console.log(' -t  traces');
     break;
   default:
     listTargets((err, hosts) => {
