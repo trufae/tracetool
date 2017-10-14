@@ -65,14 +65,19 @@ function tracerouteParse (text) {
 }
 
 function traceroute (target, cb) {
-  const cmd = ['traceroute', target];
-  exec('traceroute ' + target, function callback (error, stdout, stderr) {
+  exec('traceroute ' + target, (err, stdout, stderr) => {
+    if (err) {
+      return cb(err);
+    }
     cb(null, tracerouteParse(stdout.toString()));
   });
 }
 
 function parseRoute (target, cb) {
   fs.readFile(target, (err, stdout) => {
+    if (err) {
+      return cb(err);
+    }
     cb(null, tracerouteParse(stdout.toString()));
   });
 }

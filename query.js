@@ -64,7 +64,7 @@ function listTraces (target, cb) {
             } else {
               result.ips[subHop.addr] = 1;
             }
-            if (subHop.name != subHop.addr) {
+            if (subHop.name !== subHop.addr) {
               result.hosts[subHop.addr] = subHop.name;
             }
           }

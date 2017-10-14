@@ -20,21 +20,21 @@ traceHost(target, (err, res) => {
 });
 
 function traceHost (target, cb) {
-console.error('[*] Tracing', target);
-trace.route(target, (err, res) => {
-  if (err) {
-    throw err;
-  }
-  const report = {
-    target: target,
-    timestamp: Date.now(),
-    trace: res
-  };
-  saveReport(report, cb);
-});
+  console.error('[*] Tracing', target);
+  trace.route(target, (err, res) => {
+    if (err) {
+      throw err;
+    }
+    const report = {
+      target: target,
+      timestamp: Date.now(),
+      trace: res
+    };
+    saveReport(report, cb);
+  });
 }
 
-function saveReport(obj, cb) {
+function saveReport (obj, cb) {
   const dir = path.join(dbDir, obj.target);
   mkdirp(path.join(dbDir, obj.target), (err) => {
     if (err) {
@@ -42,6 +42,6 @@ function saveReport(obj, cb) {
     }
     fs.writeFile(path.join(dir, obj.target + '-' + obj.timestamp + '.json'), JSON.stringify(obj), err => {
       cb(err);
-    })
+    });
   });
 }
