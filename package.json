@@ -1,0 +1,26 @@
+{
+  "name": "tracetool",
+  "version": "1.0.0",
+  "description": "nodejs traceroute analysis tool",
+  "main": "index.js",
+  "dependencies": {
+    "mkdirp": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/trufae/tracetool.git"
+  },
+  "keywords": [
+    "traceroute"
+  ],
+  "author": "pancake <pancake@nopcode.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trufae/tracetool/issues"
+  },
+  "homepage": "https://github.com/trufae/tracetool#readme"
+}
